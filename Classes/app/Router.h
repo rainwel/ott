@@ -14,26 +14,27 @@
 
 NS_OTT_BEGIN
 class Router {
- public:
-  static Router *sharedRouter();
+public:
+  static Router *getInstance();
 
-  Router() {};
-  ~Router() {};
+  Router(){};
+  ~Router(){};
   static Router *create();
 
   //  CREATE_FUNC(Router);
 
   virtual bool init();
-  void push(const std::string &pURL, NextActionType method = SHOW_LOADING,
+  void push(const char *pURL, NextActionType method = SHOW_LOADING,
             int iZOrder = 0);
   void push(Frame *pFrame, NextActionType method = PUSH_FRAME, int iZOrder = 0);
   void pushDirectUrl(const char *url);
   void pop();
   void popFromDialog();
-	
+
+  void loadSplash();
   CC_SYNTHESIZE(Scene *, m_pScene, Scene);
 
- private:
+private:
   static Router *m_pRouter;
 };
 

@@ -43,6 +43,10 @@ public:
 
   virtual bool isKeyEventCustomized() { return false; };
 
+  virtual void loadWidgets(){};
+
+  static Frame *createFrameByString(const char *frameName);
+
   CC_SYNTHESIZE(Fragment *, m_pFocusedFragment, FocusedFragment);
   CC_SYNTHESIZE(RunningMode, m_eRunningMode, RunningMode);
   CC_SYNTHESIZE(bool, m_bHideTimer, HideTimer);

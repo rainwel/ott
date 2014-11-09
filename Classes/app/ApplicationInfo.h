@@ -43,8 +43,8 @@ public:
 
   int getInt(int nKey);
   void setInt(int nKey, int ival);
-	
-	void Dlog(const char * format, ...);
+
+  void Dlog(const char *format, ...);
 
 private:
   static ApplicationInfo *m_pApplicationInfo;

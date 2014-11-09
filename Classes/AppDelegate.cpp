@@ -24,8 +24,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
   auto director = Director::getInstance();
   auto glview = director->getOpenGLView();
   if (!glview) {
-    glview = GLView::create("My Game");
+    glview = GLView::create("Awesome OTT");
+    glview->setDesignResolutionSize(kEGLViewWidth, kEGLViewHeight,
+                                    ResolutionPolicy::SHOW_ALL);
+
     director->setOpenGLView(glview);
+    director->setContentScaleFactor(kEGLViewRatio);
   }
 
   // turn on display FPS
@@ -36,8 +40,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
   // create a scene. it's an autorelease object
   //  auto scene = HelloWorld::createScene();
-  director->runWithScene(Router::sharedRouter()->getScene());
+  director->runWithScene(Router::getInstance()->getScene());
   DLog("Done, %s, %d", "aaa", 123);
+
+  Router::getInstance()->loadSplash();
   // run
   //  director->runWithScene(scene);
 

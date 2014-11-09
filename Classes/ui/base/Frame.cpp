@@ -9,6 +9,7 @@
 #include "Frame.h"
 #include "BottomMenu.h"
 #include "app/ApplicationInfo.h"
+#include "ui/shared/SplashFrame.h"
 
 NS_OTT_BEGIN
 Frame::Frame() {
@@ -122,7 +123,7 @@ int Frame::onKeyEvent(int nKey) {
 
   switch (nKey) {
   case KEY_BACK:
-    //    Router::sharedRouter()->pop();
+    //    Router::getInstance()->pop();
     break;
   case KEY_OK:
   case KEY_UP:
@@ -176,7 +177,7 @@ void Frame::fireKeyEvent(int nKey) {
 
       //!!!: 在万花筒首页，进入消息中心
       if (m_strFrameId.find("home") == 0
-          //         &&  Router::sharedRouter()->onFocusedTimeWifiPad()
+          //         &&  Router::getInstance()->onFocusedTimeWifiPad()
           ) {
         if (m_pFocusedFragment != NULL) {
           m_pFocusedFragment->onFocusEnded();
@@ -260,8 +261,8 @@ bool Frame::changeFragment(int nKey) {
     this->onFragmentChanged();
     return true;
   } else if (foundFrag == NULL && g_OTT_STYLE == OTT_STYLE_MIUI &&
-             nKey == KEY_UP && this->getTag() == TAG_PAGE_HOMEFRAME) {
-    //    Router::sharedRouter()->swapNotifyBar(true);
+             nKey == KEY_UP && this->getTag() == TAG_FRAME_HOME) {
+    //    Router::getInstance()->swapNotifyBar(true);
   }
 
   return false;
@@ -281,7 +282,7 @@ void Frame::refreshBottomMenu() {
 
     pFragment = m_pFragments.at(k);
 
-    if (pFragment->getTag() == TAG_FRAME_BOTTOMMENU) {
+    if (pFragment->getTag() == TAG_WIDGET_BOTTOMMENU) {
       DLog("refreshBottomMenu - ");
       BottomMenu *bMenu = dynamic_cast<BottomMenu *>(pFragment);
       if (bMenu != NULL) {
@@ -297,8 +298,17 @@ void Frame::changeFocusedByPostion(Point pos) {
   Size size = Size(60, 50);
   if (pos.x > kEGLViewWidth - size.width &&
       pos.y > kEGLViewHeight - size.height) {
-    //    Router::sharedRouter()->pop();
+    //    Router::getInstance()->pop();
   }
+}
+
+Frame *Frame::createFrameByString(const char *frameName) {
+
+  Frame *retFrame = NULL;
+  if (strcasecmp(frameName, "SplashFrame") == 0) {
+    retFrame = SplashFrame::create();
+  }
+  return retFrame;
 }
 
 NS_OTT_END

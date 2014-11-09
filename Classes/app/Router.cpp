@@ -12,7 +12,7 @@ NS_OTT_BEGIN
 
 Router *Router::m_pRouter = NULL;
 
-Router *Router::sharedRouter() {
+Router *Router::getInstance() {
   if (m_pRouter == NULL) {
     m_pRouter = Router::create();
   }
@@ -30,12 +30,11 @@ Router *Router::create() {
 
 bool Router::init() {
   m_pScene = Scene::create();
-	
+
   return true;
 }
 
-void Router::push(const std::string &pURL, NextActionType method, int iZOrder) {
-}
+void Router::push(const char *pURL, NextActionType method, int iZOrder) {}
 
 void Router::push(Frame *pFrame, NextActionType method, int iZOrder) {}
 
@@ -44,5 +43,10 @@ void Router::pushDirectUrl(const char *url) {}
 void Router::pop() {}
 
 void Router::popFromDialog() {}
+
+void Router::loadSplash() {
+  Frame *pFrame = Frame::createFrameByString("splashframe");
+  m_pScene->addChild(pFrame);
+}
 
 NS_OTT_END
