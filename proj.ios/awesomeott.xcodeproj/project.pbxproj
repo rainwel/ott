@@ -74,6 +74,13 @@
 		EB85464B19FBE3BF00CB3C9B /* zero_copy_stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = EB85464819FBE3BF00CB3C9B /* zero_copy_stream.cc */; };
 		EB85464E19FBE3E000CB3C9B /* common.cc in Sources */ = {isa = PBXBuildFile; fileRef = EB85464C19FBE3E000CB3C9B /* common.cc */; };
 		EB85464F19FBE3E000CB3C9B /* once.cc in Sources */ = {isa = PBXBuildFile; fileRef = EB85464D19FBE3E000CB3C9B /* once.cc */; };
+		EB9D0EF31A0F956C00BC9A93 /* SplashFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9D0EF11A0F956C00BC9A93 /* SplashFrame.cpp */; };
+		EB9D0EFA1A0FA42A00BC9A93 /* config in Resources */ = {isa = PBXBuildFile; fileRef = EB9D0EF41A0FA42A00BC9A93 /* config */; };
+		EB9D0EFB1A0FA42A00BC9A93 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = EB9D0EF51A0FA42A00BC9A93 /* fonts */; };
+		EB9D0EFC1A0FA42A00BC9A93 /* img720 in Resources */ = {isa = PBXBuildFile; fileRef = EB9D0EF61A0FA42A00BC9A93 /* img720 */; };
+		EB9D0EFD1A0FA42A00BC9A93 /* img1080 in Resources */ = {isa = PBXBuildFile; fileRef = EB9D0EF71A0FA42A00BC9A93 /* img1080 */; };
+		EB9D0EFE1A0FA42A00BC9A93 /* lua in Resources */ = {isa = PBXBuildFile; fileRef = EB9D0EF81A0FA42A00BC9A93 /* lua */; };
+		EB9D0EFF1A0FA42A00BC9A93 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = EB9D0EF91A0FA42A00BC9A93 /* shaders */; };
 		EBAFC98919FD29BF0082C00D /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC98719FD29BF0082C00D /* Frame.cpp */; };
 		EBAFC98D19FD31890082C00D /* BaseBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC98B19FD31890082C00D /* BaseBox.cpp */; };
 		EBAFC99019FD32840082C00D /* BottomMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBAFC98E19FD32840082C00D /* BottomMenu.cpp */; };
@@ -284,6 +291,14 @@
 		EB85464819FBE3BF00CB3C9B /* zero_copy_stream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = zero_copy_stream.cc; path = "../../libs/protobuf-2.5.0/src/google/protobuf/io/zero_copy_stream.cc"; sourceTree = "<group>"; };
 		EB85464C19FBE3E000CB3C9B /* common.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = common.cc; path = "../../libs/protobuf-2.5.0/src/google/protobuf/stubs/common.cc"; sourceTree = "<group>"; };
 		EB85464D19FBE3E000CB3C9B /* once.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = once.cc; path = "../../libs/protobuf-2.5.0/src/google/protobuf/stubs/once.cc"; sourceTree = "<group>"; };
+		EB9D0EF11A0F956C00BC9A93 /* SplashFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SplashFrame.cpp; sourceTree = "<group>"; };
+		EB9D0EF21A0F956C00BC9A93 /* SplashFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashFrame.h; sourceTree = "<group>"; };
+		EB9D0EF41A0FA42A00BC9A93 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = config; sourceTree = "<group>"; };
+		EB9D0EF51A0FA42A00BC9A93 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		EB9D0EF61A0FA42A00BC9A93 /* img720 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img720; sourceTree = "<group>"; };
+		EB9D0EF71A0FA42A00BC9A93 /* img1080 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img1080; sourceTree = "<group>"; };
+		EB9D0EF81A0FA42A00BC9A93 /* lua */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lua; sourceTree = "<group>"; };
+		EB9D0EF91A0FA42A00BC9A93 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = "<group>"; };
 		EBAFC98719FD29BF0082C00D /* Frame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Frame.cpp; sourceTree = "<group>"; };
 		EBAFC98819FD29BF0082C00D /* Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Frame.h; sourceTree = "<group>"; };
 		EBAFC98B19FD31890082C00D /* BaseBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseBox.cpp; sourceTree = "<group>"; };
@@ -567,6 +582,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EB9D0EF41A0FA42A00BC9A93 /* config */,
+				EB9D0EF51A0FA42A00BC9A93 /* fonts */,
+				EB9D0EF61A0FA42A00BC9A93 /* img720 */,
+				EB9D0EF71A0FA42A00BC9A93 /* img1080 */,
+				EB9D0EF81A0FA42A00BC9A93 /* lua */,
+				EB9D0EF91A0FA42A00BC9A93 /* shaders */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -578,6 +599,7 @@
 		EB60674419FCC05600903120 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				EB9D0EE91A0F954D00BC9A93 /* shared */,
 				EB60674519FCC05600903120 /* base */,
 				EB60674619FCC05600903120 /* boxes */,
 				EB60674719FCC05600903120 /* MIUI */,
@@ -630,6 +652,15 @@
 			);
 			name = libs;
 			path = ../libs;
+			sourceTree = "<group>";
+		};
+		EB9D0EE91A0F954D00BC9A93 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				EB9D0EF11A0F956C00BC9A93 /* SplashFrame.cpp */,
+				EB9D0EF21A0F956C00BC9A93 /* SplashFrame.h */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -774,23 +805,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				EB9D0EFA1A0FA42A00BC9A93 /* config in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				EB9D0EFE1A0FA42A00BC9A93 /* lua in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				EB9D0EFB1A0FA42A00BC9A93 /* fonts in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				EB9D0EFC1A0FA42A00BC9A93 /* img720 in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				EB85458A19FBA7BD00CB3C9B /* protobuf-2.5.0 in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				EB9D0EFD1A0FA42A00BC9A93 /* img1080 in Resources */,
+				EB9D0EFF1A0FA42A00BC9A93 /* shaders in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -805,6 +842,7 @@
 			files = (
 				1A448F6719F15BC100E97237 /* liveinfo.pb.cc in Sources */,
 				1AB679A51A05128D007AF50A /* strUtil.cpp in Sources */,
+				EB9D0EF31A0F956C00BC9A93 /* SplashFrame.cpp in Sources */,
 				1A448F6B19F15BC100E97237 /* ProtobufWarpper.cpp in Sources */,
 				1A448F6419F15BC100E97237 /* appsinfo.pb.cc in Sources */,
 				EBAFC98919FD29BF0082C00D /* Frame.cpp in Sources */,
@@ -896,7 +934,7 @@
 					"$(SRCROOT)/../Classes",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-O0";
 				OTHER_LDFLAGS = (
@@ -933,7 +971,7 @@
 					"$(SRCROOT)/../Classes",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -971,6 +1009,7 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1001,6 +1040,7 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
