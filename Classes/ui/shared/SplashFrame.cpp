@@ -32,26 +32,37 @@ void SplashFrame::loadWidgets() {
 
   auto pLogo = Sprite::createWithSpriteFrameName("booting-logo.png");
   pLogo->setPosition(Point(kEGLViewWidth / 2, kEGLViewHeight / 2 + 80));
-  pLogo->setAnchorPoint(Point(0.5, 0.5));
+
   pLogo->setTag(TAG_WIDGET_LOGO);
   this->addChild(pLogo);
 
   auto pTitle = Sprite::createWithSpriteFrameName("booting_title_new.png");
-  pTitle->setPosition(Point(kEGLViewWidth / 2, kEGLViewHeight / 2 - 40));
-  pTitle->setAnchorPoint(Point(0.5, 0.5));
+  pTitle->setPosition(Point(kEGLViewWidth / 2, kEGLViewHeight / 2 - 45));
+
   pTitle->setTag(TAG_WIDGET_TITLE);
-  this->addChild(pTitle);
+  //  this->addChild(pTitle);
 
-  /*CCSprite *pLogoSprite = CCSprite::create("splash/booting-logo.png");
-  pLogoSprite->setAnchorPoint(ccp(0.5, 0.5));
-  pLogoSprite->setPosition(ccp(winSize.width / 2, 420));
-  pLogoSprite->setTag(TAG_FRAME_LOGO);
-  this->addChild(pLogoSprite, 2);
-
-  CCSprite *pLogoTitle = CCSprite::create("splash/booting_title_new.png");
-  pLogoTitle->setAnchorPoint(ccp(0.5f, 1.0f));
-  pLogoTitle->setPosition(ccp(winSize.width / 2, 310));
-  this->addChild(pLogoTitle);*/
+  auto pChannel = Sprite::createWithSpriteFrameName("channel_360.png");
+  Size channelSize = pChannel->getContentSize();
+  pChannel->setPosition(Point(kEGLViewWidth - 40 - channelSize.width / 2,
+                              channelSize.height / 2 + 30));
+  this->addChild(pChannel);
 }
 
+void SplashFrame::onEnter() {
+  Frame::onEnter();
+  auto pLogo = (Sprite *)this->getChildByTag(TAG_WIDGET_LOGO);
+  auto pSeq = RepeatForever::create(
+      Sequence::create(EaseSineInOut::create(RotateBy::create(1.0, 120.0)),
+                       DelayTime::create(0.2),
+                       EaseSineInOut::create(RotateBy::create(1.0, 120.0)),
+                       DelayTime::create(0.2),
+                       EaseSineInOut::create(RotateBy::create(1.0, 120.0)),
+                       DelayTime::create(0.2), NULL));
+  pLogo->runAction(pSeq);
+
+  this->scheduleOnce(schedule_selector(SplashFrame::loadHomeFrame), 2.0);
+}
+
+void SplashFrame::loadHomeFrame(float dt) {}
 NS_OTT_END

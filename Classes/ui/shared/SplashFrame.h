@@ -16,9 +16,11 @@ class SplashFrame : public Frame {
 public:
   CREATE_FUNC(SplashFrame);
   bool init();
+  void onEnter();
 
 private:
   void loadWidgets();
+  void loadHomeFrame(float dt);
 };
 
 NS_OTT_END
