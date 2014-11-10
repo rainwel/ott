@@ -45,7 +45,7 @@ public:
 
   virtual void loadWidgets(){};
 
-  static Frame *createFrameByString(const char *frameName);
+  static Frame *createFrameByTag(int itag);
 
   CC_SYNTHESIZE(Fragment *, m_pFocusedFragment, FocusedFragment);
   CC_SYNTHESIZE(RunningMode, m_eRunningMode, RunningMode);

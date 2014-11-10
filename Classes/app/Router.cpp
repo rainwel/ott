@@ -45,7 +45,7 @@ void Router::pop() {}
 void Router::popFromDialog() {}
 
 void Router::loadSplash() {
-  Frame *pFrame = Frame::createFrameByString("splashframe");
+  Frame *pFrame = Frame::createFrameByTag(TAG_FRAME_SPLASH);
   m_pScene->addChild(pFrame);
 }
 

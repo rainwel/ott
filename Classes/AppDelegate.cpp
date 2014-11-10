@@ -9,8 +9,8 @@ OTT_STYLE g_OTT_STYLE = OTT_STYLE_WHTUI;
 int kCCDebugMode = 1;
 
 float kEGLViewRatio = 1.0f;
-int kEGLViewWidth = 1280;
-int kEGLViewHeight = 720;
+float kEGLViewWidth = 1280.0;
+float kEGLViewHeight = 720.0;
 
 int g_NetworkStatus = -1;
 string g_NetworkName = "";
@@ -25,11 +25,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
   auto glview = director->getOpenGLView();
   if (!glview) {
     glview = GLView::create("Awesome OTT");
-    glview->setDesignResolutionSize(kEGLViewWidth, kEGLViewHeight,
-                                    ResolutionPolicy::SHOW_ALL);
-
     director->setOpenGLView(glview);
-    director->setContentScaleFactor(kEGLViewRatio);
   }
 
   // turn on display FPS
@@ -38,10 +34,18 @@ bool AppDelegate::applicationDidFinishLaunching() {
   // set FPS. the default value is 1.0/60 if you don't call this
   director->setAnimationInterval(1.0 / 60);
 
+  glview->setDesignResolutionSize(kEGLViewWidth, kEGLViewHeight,
+                                  ResolutionPolicy::SHOW_ALL);
+  director->setContentScaleFactor(kEGLViewRatio);
+
   // create a scene. it's an autorelease object
   //  auto scene = HelloWorld::createScene();
   director->runWithScene(Router::getInstance()->getScene());
   DLog("Done, %s, %d", "aaa", 123);
+
+  int srcFolder = 720.0f * kEGLViewRatio;
+  string strFolder = StringUtils::format("img%d", srcFolder);
+  FileUtils::getInstance()->addSearchPath(strFolder);
 
   Router::getInstance()->loadSplash();
   // run

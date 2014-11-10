@@ -302,11 +302,16 @@ void Frame::changeFocusedByPostion(Point pos) {
   }
 }
 
-Frame *Frame::createFrameByString(const char *frameName) {
+Frame *Frame::createFrameByTag(int itag) {
 
   Frame *retFrame = NULL;
-  if (strcasecmp(frameName, "SplashFrame") == 0) {
+  switch (itag) {
+  case TAG_FRAME_SPLASH:
     retFrame = SplashFrame::create();
+    break;
+
+  default:
+    break;
   }
   return retFrame;
 }

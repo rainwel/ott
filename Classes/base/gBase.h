@@ -43,14 +43,15 @@ extern int g_NetworkStatus;
 extern std::string g_NetworkName;
 
 extern int kCCDebugMode;
-extern int kEGLViewWidth;
-extern int kEGLViewHeight;
+extern float kEGLViewWidth;
+extern float kEGLViewHeight;
 extern float kEGLViewRatio;
 
 extern pthread_t g_MainThreadID;
 
-#define DLog(fmt, ...)                                                       \
-  strUtil::getInstance()->logInfo(kCCDebugMode, ("%s [Line %d] " fmt), __PRETTY_FUNCTION__, \
-                   __LINE__, ##__VA_ARGS__)
+#define DLog(fmt, ...)                                                         \
+  strUtil::getInstance()->logInfo(kCCDebugMode, ("%s [Line %d] " fmt),         \
+                                  __PRETTY_FUNCTION__, __LINE__,               \
+                                  ##__VA_ARGS__)
 
 #endif /* defined(__awesomeott__gBase__) */
